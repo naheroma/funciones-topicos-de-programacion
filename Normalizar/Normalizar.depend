@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1757170709 source:c:\unlam\cursadas\2025\2\09-6300\proyectos\normalizar\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../Palabras/SecPal.h"
+
+1757167399 c:\unlam\cursadas\2025\2\09-6300\proyectos\palabras\secpal.h
+	<stdbool.h>
+	"Palabra.h"
+
+1757164073 c:\unlam\cursadas\2025\2\09-6300\proyectos\palabras\palabra.h
+

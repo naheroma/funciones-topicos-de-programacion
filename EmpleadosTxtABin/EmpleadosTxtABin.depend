@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1760799051 source:c:\unlam\cursadas\2025\2\09-6300\proyectos\empleadostxtabin\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../Fecha/Fecha.h"
+	"../Archivo/Archivo.h"
+
+1755965706 c:\unlam\cursadas\2025\2\09-6300\proyectos\fecha\fecha.h
+	<stdbool.h>
+
+1760796855 c:\unlam\cursadas\2025\2\09-6300\proyectos\archivo\archivo.h
+	<stdio.h>
+	<stdbool.h>
+

@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1759583897 source:c:\unlam\cursadas\2025\2\09-6300\proyectos\testvector\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	"../Vector/vector.h"
+	"../Fecha/Fecha.h"
+
+1759583260 c:\unlam\cursadas\2025\2\09-6300\proyectos\vector\vector.h
+	<stddef.h>
+	<stdbool.h>
+
+1755965706 c:\unlam\cursadas\2025\2\09-6300\proyectos\fecha\fecha.h
+	<stdbool.h>
+
