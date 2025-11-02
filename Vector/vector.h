@@ -3,16 +3,12 @@
 
 #include <stddef.h>
 #include <stdbool.h>
+#include "../Defines/Defines.h"
 
 #define CAP_INI 10
 #define FACTOR_INCR 1.5
 #define FACTOR_DECR 0.5
 #define FACTOR_OCUP 0.25
-
-#define TODO_OK 0
-#define LLENO 1
-#define DUPLICADO 2
-#define SIN_MEM 3
 
 
 typedef enum
@@ -48,6 +44,7 @@ typedef void (*Actualizar)(void* ev, const void* ei);
 
 
 bool vectorCrear(Vector* v, size_t tamElem);
+int vectorCrearDeArchivo(Vector* v, size_t tamElem, const char* nomArch);
 int vectorOrdInsertar(Vector* v, const void* elem, Cmp cmp, Actualizar actualizar);
 int vectorOrdInsertarCDup(Vector* v, int elem);
 int vectorInsertarAlIninio(Vector* v, int elem);
@@ -66,6 +63,7 @@ void vectorVaciar(Vector* v);
 bool vectorObtenerDePos(const Vector* v, int pos, int* elem);
 //void vectorMostrar(const Vector* v);
 void vectorRecorrer(Vector* v, Accion accion, void* dato);
+int vectorGrabar(const Vector* v, const char* nomArch);
 void vectorDestruir(Vector* v);
 
 

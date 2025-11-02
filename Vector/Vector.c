@@ -39,6 +39,46 @@ bool vectorCrear(Vector* v, size_t tamElem)
 }
 
 
+int vectorCrearDeArchivo(Vector* v, size_t tamElem, const char* nomArch)
+{
+    FILE* arch = fopen(nomArch, "rb");
+
+    if(!arch)
+    {
+        v->vec = NULL;
+        v->ce = 0;
+        v->cap = 0;
+        v->tamElem = 0;
+        return ERR_ARCHIVO;
+    }
+
+    fseek(arch, 0L, SEEK_END);
+    size_t tamArchivo = ftell(arch);
+    rewind(arch);
+
+    v->vec = malloc(tamArchivo);
+
+    if(!v->vec)
+    {
+        fclose(arch);
+        v->ce = 0;
+        v->cap = 0;
+        v->tamElem = 0;
+        return SIN_MEM;
+    }
+
+    fread(v->vec, tamArchivo, 1, arch);
+
+    fclose(arch);
+
+    v->ce = tamArchivo / tamElem;
+    v->cap = v->ce;
+    v->tamElem = tamElem;
+
+    return TODO_OK;
+}
+
+
 int vectorOrdInsertar(Vector* v, const void* elem, Cmp cmp, Actualizar actualizar)
 {
     if(v->ce == v->cap)
@@ -324,6 +364,23 @@ void vectorRecorrer(Vector* v, Accion accion, void* dato)
     {
         accion(i, dato);
     }
+}
+
+
+int vectorGrabar(const Vector* v, const char* nomArch)
+{
+    FILE* arch = fopen(nomArch, "wb");
+
+    if(!arch)
+    {
+        return ERR_ARCHIVO;
+    }
+
+    fwrite(v->vec, v->tamElem, v->ce, arch);
+
+    fclose(arch);
+
+    return TODO_OK;
 }
 
 
